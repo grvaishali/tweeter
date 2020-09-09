@@ -34,22 +34,39 @@ $(document).ready(function () {
 
   $("form").on('submit', function (event) {
     const $form = $(this);
+    const tweetText = $($form.children("textarea")[0]);
 
-    $.ajax($form.attr('action'), {
-      method: $form.attr('method'),
-      data: $form.serialize()
-    }).then(() => {
-      $("#tweets").empty();
-      loadTweets();
-    });
-    $form.trigger('reset');
-    $(".new-tweet .counter").text("140");
+    resetValidation();
 
+    if (tweetText.val() === "") {
+      setValidationErrorMessage("Tweet must contain some text.");
+    } else if (tweetText.val().length > 140) {
+      setValidationErrorMessage("Tweet cannot be longer than 140 characters.");
+    } else {
+      $.ajax($form.attr('action'), {
+        method: $form.attr('method'),
+        data: $form.serialize()
+      }).then(() => {
+        $("#tweets").empty();
+        loadTweets();
+      });
+      $form.trigger('reset');
+      $(".new-tweet .counter").text("140");
+    }
     event.preventDefault();
   });
 
   const loadTweets = () => {
     $.ajax("/tweets").then(data => renderTweets(data));
+  };
+
+  const setValidationErrorMessage = (message) => {
+    $("section.new-tweet .validation-error .message").text(message);
+    $("section.new-tweet .validation-error").show();
+  };
+
+  const resetValidation = () => {
+    $("section.new-tweet .validation-error").hide();
   };
 
   loadTweets();

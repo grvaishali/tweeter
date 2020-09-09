@@ -1,12 +1,13 @@
-.new-tweet{
+.new-tweet {
   margin-bottom: 20px;
 }
-.new-tweet label{
+
+.new-tweet label {
   width: 100%;
 }
 
-.new-tweet textarea{
-  border-bottom:solid thick black;
+.new-tweet textarea {
+  border-bottom: solid thick black;
   width: 100%;
   background: inherit;
   border-left: none;
@@ -15,21 +16,29 @@
   clear: both;
 }
 
-.new-tweet textarea:focus{
-  outline:none;
+.new-tweet textarea:focus {
+  outline: none;
   font-size: medium;
 }
 
-.new-tweet output{
+.new-tweet output {
   float: right;
 }
 
-.new-tweet form div{
+.new-tweet form div {
   font-family: 'Bungee', sans-serif;
-  padding-top:5px;
+  padding-top: 5px;
 }
 
-.new-tweet form div button{
+.new-tweet form div button {
   background-color: #4056A1;
-  color:#FFFFFF;
+  color: #FFFFFF;
+}
+
+.new-tweet .validation-error {
+  display: none;
+  margin-bottom: 1em;
+  border: 3px solid red;
+  padding: 1.5em;
+  background-color: #F99;
 }
