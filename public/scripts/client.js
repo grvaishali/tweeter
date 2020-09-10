@@ -62,7 +62,7 @@ $(document).ready(function () {
 
   const setValidationErrorMessage = (message) => {
     $("section.new-tweet .validation-error .message").text(message);
-    $("section.new-tweet .validation-error").show();
+    $("section.new-tweet .validation-error").slideDown();
   };
 
   const resetValidation = () => {
