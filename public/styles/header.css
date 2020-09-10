@@ -9,3 +9,12 @@
   align-items: center;
   padding-top: 120px;
 }
+
+@media (min-width: 768px) {
+  .main-header {
+    margin-top: 200px;
+    width: 30%;
+    height: 450px;
+    margin-left: 5%;
+  }
+}

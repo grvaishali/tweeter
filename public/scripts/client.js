@@ -69,6 +69,13 @@ $(document).ready(function () {
     $("section.new-tweet .validation-error").hide();
   };
 
+  $(".new-tweet-container").on('click', function (event) {
+    const $newTweetSection = $("section.new-tweet");
+    $newTweetSection.toggle();
+    $newTweetSection.find("textarea").focus();
+    event.preventDefault();
+  });
+
   loadTweets();
 });
 

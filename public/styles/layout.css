@@ -29,6 +29,15 @@ body {
   background-color: inherit;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+  }
+  .container {
+    margin-top: 200px;
+    width: 60%;
+    height: 400px;
+    padding-right: 5%;
+    ;
+  }
+}

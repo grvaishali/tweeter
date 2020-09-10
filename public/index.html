@@ -3,6 +3,7 @@
 
 <head>
   <!-- Meta Information -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <title>Tweeter - Home Page</title>
 
   <!-- External CSS -->
@@ -33,6 +34,10 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
+    <span class="new-tweet-container">
+      <a id="new-tweet-link" href="#"><strong>Write</strong> a new tweet</a>
+      <i class="fas fa-angle-double-down"></i>
+    </span>
   </nav>
 
   <!-- Page-specific (main) content here -->
@@ -47,7 +52,6 @@
   </header>
   <main class="container">
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
       <div class="validation-error">
         <span class="fas fa-exclamation-triangle"></span>
         <span class="message"></span>

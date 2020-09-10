@@ -11,3 +11,35 @@ nav {
 nav span {
   font-family: 'Bungee', sans-serif;
 }
+
+#new-tweet-link, #new-tweet-link:hover {
+  color: white;
+  text-decoration: none;
+  float: right;
+}
+
+.new-tweet-container {
+  display: inline-flex;
+  float: right;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.new-tweet-container i {
+  color: red;
+  animation: updown 2s ease infinite;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-20%);
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(-20%);
+  }
+}
