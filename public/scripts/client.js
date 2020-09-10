@@ -1,15 +1,15 @@
 
-$(document).ready(function () {
+$(document).ready(function() {
 
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     const tweetsContainer = $("#tweets");
 
     for (const tweet of tweets) {
       tweetsContainer.prepend(createTweetElement(tweet));
     }
-  }
+  };
 
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     let tweetEl = $("<article>").addClass("tweet");
 
     let headerEl = $("<header>");
@@ -30,9 +30,9 @@ $(document).ready(function () {
     tweetEl.append(footerEl);
 
     return tweetEl;
-  }
+  };
 
-  $("form").on('submit', function (event) {
+  $("form").on('submit', function(event) {
     const $form = $(this);
     const tweetText = $($form.children("textarea")[0]);
 
@@ -69,7 +69,7 @@ $(document).ready(function () {
     $("section.new-tweet .validation-error").hide();
   };
 
-  $(".new-tweet-container").on('click', function (event) {
+  $(".new-tweet-container").on('click', function(event) {
     const $newTweetSection = $("section.new-tweet");
     $newTweetSection.toggle();
     $newTweetSection.find("textarea").focus();
